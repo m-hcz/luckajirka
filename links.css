@@ -1,0 +1,16 @@
+a {
+    position: relative;
+    padding: 3px 0;
+    color: var(--color-text);
+    fill: var(--color-text);
+    cursor: pointer;
+}
+
+a:hover, a:visited {
+    color: var(--color-text);
+    fill: var(--color-text);
+}
+
+.underline {
+    text-decoration: underline;
+}
