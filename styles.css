@@ -81,12 +81,6 @@ body {
     object-fit: cover;
 }
 
-.events-content {
-    display: flex;
-    flex-direction: column;
-    gap: calc(var(--default-spacing)*3);
-}
-
 
 
 
