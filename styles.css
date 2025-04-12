@@ -3,13 +3,18 @@
     --def-link-duration: .3s;
     --def-transition-delay: .2s;
 
-    --color-bg: #f6f5f4;
+    --color-bg: white;
+    /* #f6f5f4 */
     --color-bg-panel: #a3a3a3;
     --color-bg-info: #FF585860;
 
     --color-text: #2e2a27;
+    --color-yellow: #FCC419;
 
     --default-spacing: 10px;
+
+    --font-plain-text : "merriweather", Arial, Helvetica, sans-serif;
+    --font-title: "Cinzel", Arial, Helvetica, sans-serif;
 }
 
 * {
@@ -19,7 +24,7 @@
 }
 
 html {
-    font-family: "Cinzel", Arial, Helvetica, sans-serif;
+    font-family: var(--font-plain-text);
     overflow-x: hidden;
     max-width: 100%;
 }
@@ -36,6 +41,51 @@ body {
     align-items: center;
     overflow-x: hidden;
     box-sizing: border-box;
+}
+
+h1 {
+    font-size: 2rem;
+    font-family: var(--font-title);
+}
+
+h2,
+td {
+    font-size: 1.5rem;
+    font-weight: normal;
+}
+
+h3 {
+    font-size: 1rem;
+    font-weight: normal;
+}
+
+svg {
+    color: var(--color-yellow);
+}
+
+.svg-style {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    min-height: 100px;
+}
+
+button {
+    background: transparent;
+    border: 0;
+    cursor: pointer;
+    padding: 10px;
+}
+
+table {
+    width: auto;
+    margin-right: auto;
+    border-spacing: 0;
+}
+
+td {
+    padding: 0 var(--default-spacing);
 }
 
 ::-webkit-scrollbar {
@@ -61,7 +111,7 @@ body {
 .main {
     display: flex;
     flex-direction: column;
-    gap: calc(var(--default-spacing)*8);
+    gap: calc(var(--default-spacing)*6);
     width: 100%;
     padding: 0 calc(var(--default-spacing));
 }
@@ -85,7 +135,7 @@ body {
 
 
 .note {
-    font-size: 12px;
+    font-size: 0.8rem;
 }
 
 footer {
@@ -106,10 +156,56 @@ footer {
 }
 
 @media (max-width: 768px) {
+    h1 {
+        font-size: 1.5rem;
+    }
+
+    h2,
+    td {
+        font-size: 1rem;
+    }
+
+    h3 {
+        font-size: .7rem;
+    }
+    td {
+        padding: 0 6px;
+    }
+    .svg-style {
+        min-height: 60px;
+    }
+
     footer {
         display: flex;
         flex-direction: column;
         align-items: center;
         justify-content: center;
+    }
+    .note {
+        font-size: 0.6rem;
+    }
+}
+
+@media (max-width: 500px) {
+    h1 {
+        font-size: 1rem;
+    }
+
+    h2,
+    td {
+        font-size: .7rem;
+    }
+
+    h3 {
+        font-size: .6rem;
+    }
+    td {
+        padding: 0 4px;
+    }
+    .svg-style {
+        min-height: 40px;
+    }
+    button {
+        padding: 6px;
     }
 }

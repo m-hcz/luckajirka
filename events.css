@@ -31,7 +31,6 @@
     flex-wrap: nowrap;
     justify-content: end;
     text-transform: uppercase
-
 }
 
 .event-body {
@@ -64,11 +63,147 @@
     padding: calc(var(--default-spacing)*2);
 }
 
+.section {
+    margin: 0 20px;
+}
+
+.section-part {
+    margin-left: 60px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.location-text {
+    display: flex;
+    flex-wrap: nowrap;
+    align-content: center;
+    align-items: center;
+    gap: 20px;
+}
+
+.timeline {
+    position: relative;
+    width: 20px;
+}
+
+.timeline.top::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    bottom: 0;
+    left: 50%;
+    width: 4px;
+    background: var(--color-yellow);
+    z-index: 0;
+}
+
+.timeline.bottom::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 50%;
+    left: 50%;
+    width: 4px;
+    background: var(--color-yellow);
+    z-index: 0;
+}
+
+.timeline::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    width: 4px;
+    background: var(--color-yellow);
+    transform: translateX(-50%);
+    z-index: 0;
+}
+
+.circle {
+    width: 14px;
+    height: 14px;
+    background: var(--color-yellow);
+    border-radius: 50%;
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1;
+}
+
+.svg-width-64 {
+    width: 64px;
+}
+.svg-height-64 {
+    height: 64px;
+}
+.svg-width-54 {
+    width: 54px;
+}
+
 @media (max-width: 768px) {
+    .section {
+        margin: 0 0px;
+    }
+
+    .section-part {
+        margin-left: 30px;
+    }
+
+    .location-text {
+        gap: 10px;
+    }
+
+    .timeline {
+        width: 10px;
+    }
+
+    .timeline.top::before,
+    .timeline.bottom::before,
+    .timeline::before {
+        width: 2px;
+    }
+
+    .circle {
+        width: 8px;
+        height: 8px;
+    }
+
+    .svg-width-64 {
+        width: 34px;
+    }
+
+    .svg-height-64 {
+        height: 34px;
+    }
+    .svg-width-54 {
+        width: 26px;
+    }
+
     .event-list {
         display: flex;
         flex-wrap: wrap;
         flex-direction: column;
         align-content: center;
+    }
+}
+
+@media (max-width: 500px) {
+    .svg-width-64 {
+        width: 24px;
+    }
+    .svg-height-64 {
+        min-height: 60px;
+    }
+    .svg-width-54 {
+        width: 18px;
+    }
+}
+
+
+@media (max-width: 370px) {
+    .section-part {
+        margin-left: 10px;
     }
 }
