@@ -5,10 +5,11 @@
 .gallery-preview {
     filter: grayscale(100%);
     max-width: 100%;
+    transition: filter 0.5s ease-in-out;
 }
 
 .gallery-preview:hover {
-    filter: none;
+    filter: grayscale(0%);
 }
 
 .gallery-row {
