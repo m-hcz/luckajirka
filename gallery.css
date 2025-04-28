@@ -1,0 +1,51 @@
+.gallery-full {
+    max-width: 100%;
+}
+
+.gallery-preview {
+    filter: grayscale(100%);
+    max-width: 100%;
+}
+
+.gallery-preview:hover {
+    filter: none;
+}
+
+.gallery-row {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 0 2px;
+  }
+  
+  /* Create four equal columns that sits next to each other */
+  .gallery-column {
+    flex: calc(25% - 4px);
+    max-width: 25%;
+    padding: 0 2px;
+  }
+  
+  .gallery-column img {
+    margin-top: 4px;
+    vertical-align: middle;
+    width: 100%;
+  }
+  
+  /* Responsive layout - makes a two column-layout instead of four columns */
+  @media screen and (max-width: 800px) {
+    .gallery-column {
+      flex: calc(50% - 4pc);
+      max-width: 50%;
+    }
+  }
+  
+  /* Responsive layout - makes the two columns stack on top of each other instead of next to each other */
+  @media screen and (max-width: 600px) {
+    .gallery-column {
+      flex: 100%;
+      max-width: 100%;
+    }
+
+    .gallery-column-hidden {
+        display: none;
+    }
+  }
